@@ -1,0 +1,80 @@
+{
+  "name": "bhmap",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "pack": "ng-packagr -p package.json"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^5.2.0",
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "@angular/forms": "^5.2.0",
+    "@angular/http": "^5.2.0",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/router": "^5.2.0",
+    "@types/ol": "^4.6.5",
+    "@types/proj4": "^2.5.0",
+    "core-js": "^2.4.1",
+    "ng-http-loader": "^0.9.1",
+    "ng-packagr": "^2.4.2",
+    "ol": "^5.3.1",
+    "proj4": "^2.5.0",
+    "rxjs": "^5.5.6",
+    "zone.js": "^0.8.19"
+  },
+  "devDependencies": {
+    "@angular/cli": "~1.7.4",
+    "@angular/compiler-cli": "^5.2.0",
+    "@angular/language-service": "^5.2.0",
+    "@types/jasmine": "~2.8.3",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60",
+    "codelyzer": "^4.0.1",
+    "jasmine-core": "~2.8.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~2.0.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.1.2",
+    "ts-node": "~4.1.0",
+    "tslint": "~5.9.1",
+    "typescript": "~2.9.2"
+  },
+  "main": "./dist/bundles/bhmap.umd.js",
+  "typings": "./dist/bhmap.d.ts",
+  "ngPackage": {
+    "lib": {
+      "cssUrl": "inline",
+      "entryFile": "./src/public_api.ts"
+    },
+    "whitelistedNonPeerDependencies": [
+      "angular",
+      "bootstrap",
+      "ng-packagr",
+      "core-js",
+      "zone",
+      "ngx",
+      "file-saver",
+      "ng-recaptcha",
+      "ng-http-loader",
+      "rxjs",
+      "xlsx",
+      "@types/ol",
+      "@types/proj4",
+      "ol",
+      "proj4"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+<div class="div-camadas">
+
+    <div style="text-align: center;padding-top: 5px;"><b>Visualizar</b></div>
+
+
+    <div style="margin:5px;">
+
+        <div *ngFor="let c of camadas">
+            <input type="checkbox" [id]="c.nome" [(ngModel)]="c.selecionado" #ckb="ngModel" [disabled]="!c.habilitado"
+                (change)="onChange(c)" />
+            <label [for]="c.nome">{{ c.descricao }}</label>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,12 @@
+export declare const filtroEndereco: RegExp;
+export declare const idAreaTrechoLogradouro = "ID_AREA_TRECHO_LOGRADOURO";
+export declare const caminhoMetadados = "v2/api/metacamada";
+export declare const epsg = "EPSG:31983";
+export declare function formataEndereco(endereco: any): string;
+export declare function concatInQueryParams(queryFilterObject: any): string;
+export declare function getUrlBhMap(isProduction: boolean): "http://bhmap.pbh.gov.br/" | "http://bhmap-hm.pbh.gov.br/";
+export declare function getUrlCamadas(isProduction: boolean): "http://bhmapogcbase.pbh.gov.br/bhmapogcbase/" | "http://bhmapogcbase-hm.pbh.gov.br/bhmapogcbase/";
+export declare function getUrlGeocoder(isProduction: boolean): "http://geocoder.pbh.gov.br/" | "http://geocoder-hm.pbh.gov.br/";
+export declare function distinctArrayByProperties(array: any, prop: any, prop2: any): any;
+export declare function distinctArrayByProperty(array: any, prop: any): any;
+export declare function calculaAreaImagemPorGeometrias(geometrias: any, buffer: number): any;

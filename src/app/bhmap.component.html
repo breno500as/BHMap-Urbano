@@ -1,0 +1,70 @@
+
+<spinner [backgroundColor]="'#64676b'" [spinner]="spinkit.skThreeBounce" [debounceDelay]="200">
+</spinner>
+
+<!-- Controles de zoom do mapa-->
+<div class="BHMapZoomBox">
+  <div class="BHMapZoomBoxPlus">
+     <a href="#" (click)="zoomIn()"></a>
+   </div>
+   <div class="BHMapZoomBoxMinus">
+      <a href="#" (click)="zoomOut()"></a>
+  </div>
+</div>
+
+<!-- Div que renderiza o mapa
+
+  
+<div id="BHMap" style="height: 98vH; width: 99vW; -webkit-box-flex: 0; -ms-flex: 0 0 100%; flex: 0 0 100%;max-width: 100%;"></div> -->
+ 
+
+<div id="map" class="map" style="height: 98vH; width: 99vW; -webkit-box-flex: 0; -ms-flex: 0 0 100%; flex: 0 0 100%;max-width: 100%;"></div>
+
+
+<!--Pesquisa por logradouros.-->
+
+<div class="div-pesquisa-logradouro">
+ <table class="tabela-pesquisa-logradouro">
+   <tr>
+     <td class="cabecalho"><label for="nomeLogradouro">Logradouro</label>
+     </td>
+   </tr>
+   <tr>
+     <td>
+       <input type="text" [(ngModel)]="nomeLogradouro" style="width: 180px;" placeholder="Digite o endereço" (keypress)="keypressLogradouro($event)"  />
+       <input type="number" [(ngModel)]="numeroLogradouro" style="width: 50px;" min="1" placeholder="Nº" (keypress)="keypressLogradouro($event)"  />
+       <button (click)="buscaLogradouro()" type="button" class="btn-lograd btn-lupa" title="Pesquisar"></button>
+     </td>
+   </tr>
+ </table>
+</div>
+
+<!-- Grid de resultado pesquisa logradouros -->
+
+<div class="div-endereco">
+ <table class="tabela-endereco" *ngIf="enderecos && enderecos.length > 1">
+   <tr>
+     <td style="text-align:right">
+       <button (click)="limparEnderecos()" class="btn-lograd btn-fechar" type="button" title="Fechar"></button>	
+     </td>
+   </tr>
+   <tr *ngFor="let endereco of enderecos" (click)=zoomEndereco(endereco)>
+     <td> {{endereco.tipologradouro}} {{endereco.nomelogradouro}} , BAIRRO {{endereco.bairropopular | uppercase}}
+     </td>
+   </tr>
+ </table>
+</div>
+
+<!--Componente de camadas / profundidades.-->
+
+<ng-container *ngIf="tiposCamadasSelecaoUsuario">
+  <app-painel-selecao-camadas id="camadas" [(ngModel)]="tiposCamadasSelecaoUsuario" (change)="changeCamada($event)" ></app-painel-selecao-camadas>
+</ng-container>
+
+<div class="div-remover-pontos">
+ <button type="button" class="btn btn-danger" (click)="removerPontos()">Remover pontos</button>
+</div>
+
+
+
+<div class="logoBHMap"> </div>
